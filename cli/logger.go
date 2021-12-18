@@ -22,9 +22,21 @@ func NewLogger() *Logger {
 }
 
 func (l *Logger) Promotion(store *state.State, to state.ReleaseKind) {
-	fromR := store.Latest(to)
+	from, err := to.Prev()
+	if err != nil {
+		fmt.Fprintf(l.l, "cli: could not determine previous release kind: %s\n", err)
+		return
+	}
+	fromR := store.Latest(from)
 	toR := store.Latest(to)
-	fmt.Fprintf(l.l, "promoted %s to %s\n", aurora.BrightRed(fromR), aurora.BrightGreen(toR))
+	fmt.Fprintf(
+		l.l,
+		"promoted %s(%s) to %s(%s)\n",
+		aurora.BrightRed(fromR),
+		fromR.BlockHash.Short(),
+		aurora.BrightGreen(toR),
+		toR.BlockHash.Short(),
+	)
 	fmt.Fprint(l.o, toR.String())
 }
 

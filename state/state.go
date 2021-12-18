@@ -30,6 +30,16 @@ func (s *State) CreateRelease(r *Release) error {
 		return err
 	}
 	r.CreatedAt = time.Now()
+	{
+		if len(s.Releases) != 0 {
+			r.PreviousBlockHash = s.Releases[0].BlockHash
+		}
+		hash, err := r.Hash()
+		if err != nil {
+			return err
+		}
+		r.BlockHash = hash
+	}
 	s.Releases = append([]*Release{r}, s.Releases...)
 	return nil
 }
@@ -94,5 +104,38 @@ func (s *State) Import(filepath string) error {
 	if err != nil {
 		return err
 	}
-	return json.Unmarshal(b, &s)
+	if err := json.Unmarshal(b, &s); err != nil {
+		return err
+	}
+	if err := s.Validate(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (s *State) Validate() error {
+	var previousBlock Hash
+	for i, v := range s.Releases {
+		if err := v.Validate(); err != nil {
+			return err
+		}
+		{
+			hash, err := v.Hash()
+			if err != nil {
+				return err
+			}
+			if !v.BlockHash.Match(hash) {
+				return eris.Errorf("state: block %s is corrupted. calculated hash %s", v.BlockHash.Short(), hash.Short())
+			}
+		}
+		if !previousBlock.IsEmpty() && !previousBlock.Match(v.BlockHash) {
+			return eris.New("state: release hash does not match with previous release")
+		}
+		previousBlock = v.PreviousBlockHash
+		// only last block can have a nil previous block hash
+		if previousBlock.IsEmpty() && i != len(s.Releases)-1 {
+			return eris.New("state: missing previous block hash")
+		}
+	}
+	return nil
 }
