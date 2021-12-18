@@ -4,66 +4,72 @@
 			"kind": "eol",
 			"tag": "v1.0.0-eol",
 			"versions": {
-				"gateway.service": "4ca603f",
-				"user.service": "3db20cf"
+				"gateway-service": "4ca603f",
+				"product-service": "6a9b349",
+				"user-service": "3db20cf"
 			},
-			"created_at": "2021-12-19T05:33:20.201044+06:00",
-			"block_hash": "b651b27286d767762fe42028a43e3606257a5b4d67d417677f9ed42d3ac827c7",
-			"previous_block_hash": "ef46881518403f9bbbcaeedb9a8d2f220f7145c55f2f0d15d7073452f47fd53d"
+			"created_at": "2021-12-19T05:38:46.193846+06:00",
+			"block_hash": "201cafec2ebfd787a90f16f9b202aaec1ea8468a623ca297ccc0627c70797ae8",
+			"previous_block_hash": "96eb2425e3a7585db36309518503939c8ab699c71cfccdb0e25f23d6944bcaa2"
 		},
 		{
 			"kind": "ga",
 			"tag": "v1.0.0",
 			"versions": {
-				"gateway.service": "4ca603f",
-				"user.service": "3db20cf"
+				"gateway-service": "4ca603f",
+				"product-service": "6a9b349",
+				"user-service": "3db20cf"
 			},
-			"created_at": "2021-12-19T05:33:17.258819+06:00",
-			"block_hash": "ef46881518403f9bbbcaeedb9a8d2f220f7145c55f2f0d15d7073452f47fd53d",
-			"previous_block_hash": "6660302e4f4e4b2b9db24c461c6d5c329922716c0ca2f19c5f301f45b3b7e269"
+			"created_at": "2021-12-19T05:38:41.579552+06:00",
+			"block_hash": "96eb2425e3a7585db36309518503939c8ab699c71cfccdb0e25f23d6944bcaa2",
+			"previous_block_hash": "7ffc37a4e4faadaadb4a5cb82035623584382ab588f0b400eb75add01e8c5d11"
 		},
 		{
 			"kind": "rc",
 			"tag": "v1.0.0-rc",
 			"versions": {
-				"gateway.service": "4ca603f",
-				"user.service": "3db20cf"
+				"gateway-service": "4ca603f",
+				"product-service": "6a9b349",
+				"user-service": "3db20cf"
 			},
-			"created_at": "2021-12-19T05:33:15.161033+06:00",
-			"block_hash": "6660302e4f4e4b2b9db24c461c6d5c329922716c0ca2f19c5f301f45b3b7e269",
-			"previous_block_hash": "82dbaa212302b13f6a800fc12ae6f852f066d3b3a488879b6ddbadbeec5c59fe"
+			"created_at": "2021-12-19T05:38:37.665988+06:00",
+			"block_hash": "7ffc37a4e4faadaadb4a5cb82035623584382ab588f0b400eb75add01e8c5d11",
+			"previous_block_hash": "1ab50df46687ae0b509ffeb92d32a1f06ae96736ecb73352a9942101a5e967f7"
 		},
 		{
 			"kind": "beta",
 			"tag": "v1.0.0-beta",
 			"versions": {
-				"gateway.service": "4ca603f",
-				"user.service": "3db20cf"
+				"gateway-service": "4ca603f",
+				"product-service": "6a9b349",
+				"user-service": "3db20cf"
 			},
-			"created_at": "2021-12-19T05:33:08.214228+06:00",
-			"block_hash": "82dbaa212302b13f6a800fc12ae6f852f066d3b3a488879b6ddbadbeec5c59fe",
-			"previous_block_hash": "c3a6bbd3380f886a407cd288f8822db387ee7347f2f7b53e892c5c17b6bd9634"
+			"created_at": "2021-12-19T05:38:13.655623+06:00",
+			"block_hash": "1ab50df46687ae0b509ffeb92d32a1f06ae96736ecb73352a9942101a5e967f7",
+			"previous_block_hash": "595c10526924ce5e0eae63f93250c69c391e14dc32a416deeebfa312f36a658d"
 		},
 		{
 			"kind": "alpha",
 			"tag": "v1.0.0-alpha",
 			"versions": {
-				"gateway.service": "4ca603f",
-				"user.service": "3db20cf"
+				"gateway-service": "4ca603f",
+				"product-service": "6a9b349",
+				"user-service": "3db20cf"
 			},
-			"created_at": "2021-12-19T05:14:07.598142+06:00",
-			"block_hash": "c3a6bbd3380f886a407cd288f8822db387ee7347f2f7b53e892c5c17b6bd9634",
-			"previous_block_hash": "917f860289da90a2e6f73bbb48f256ddd4a81b2dff3274eae75f1ad01f0b82e5"
+			"created_at": "2021-12-19T05:38:01.381248+06:00",
+			"block_hash": "595c10526924ce5e0eae63f93250c69c391e14dc32a416deeebfa312f36a658d",
+			"previous_block_hash": "09b35b441dc0b77e82b63dbaa0a7f47495940fbbf02c56714d1749bb1b7f278b"
 		},
 		{
 			"kind": "dev",
 			"tag": "v1.0.0-dev",
 			"versions": {
-				"gateway.service": "4ca603f",
-				"user.service": "3db20cf"
+				"gateway-service": "4ca603f",
+				"product-service": "6a9b349",
+				"user-service": "3db20cf"
 			},
 			"created_at": "2021-12-19T04:57:06.387826+06:00",
-			"block_hash": "917f860289da90a2e6f73bbb48f256ddd4a81b2dff3274eae75f1ad01f0b82e5"
+			"block_hash": "09b35b441dc0b77e82b63dbaa0a7f47495940fbbf02c56714d1749bb1b7f278b"
 		}
 	]
 }

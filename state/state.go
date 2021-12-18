@@ -125,7 +125,7 @@ func (s *State) Validate() error {
 				return err
 			}
 			if !v.BlockHash.Match(hash) {
-				return eris.Errorf("state: block %s is corrupted. calculated hash %s", v.BlockHash.Short(), hash.Short())
+				return eris.Errorf("state: block %s is corrupted. calculated hash %s", v.BlockHash.Short(), hash.String())
 			}
 		}
 		if !previousBlock.IsEmpty() && !previousBlock.Match(v.BlockHash) {
