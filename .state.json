@@ -1,0 +1,22 @@
+{
+	"releases": [
+		{
+			"kind": "alpha",
+			"tag": "v1.0.0-alpha",
+			"versions": {
+				"gateway.service": "4ca603f",
+				"user.service": "3db20cf"
+			},
+			"created_at": "2021-12-17T18:01:12.270948+06:00"
+		},
+		{
+			"kind": "dev",
+			"tag": "v1.0.0",
+			"versions": {
+				"gateway.service": "4ca603f",
+				"user.service": "3db20cf"
+			},
+			"created_at": "2021-12-17T18:01:12.270948+06:00"
+		}
+	]
+}
