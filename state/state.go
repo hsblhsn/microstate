@@ -113,6 +113,8 @@ func (s *State) Import(filepath string) error {
 	return nil
 }
 
+// Validate validates the state.
+// It checks for block hashes and matches the previous block hashes.
 func (s *State) Validate() error {
 	var previousBlock Hash
 	for i, v := range s.Releases {

@@ -18,12 +18,15 @@ var (
 	ErrServiceMapInvalid   = eris.New("state: invalid service map. at least one active service is required to create a release")
 )
 
+// Hash is a custom type to store hash string.
 type Hash string
 
+// String returns the string representation of the hash.
 func (h Hash) String() string {
 	return string(h)
 }
 
+// Short hash version
 func (h Hash) Short() string {
 	if len(h) < 10 {
 		return ""
@@ -31,10 +34,12 @@ func (h Hash) Short() string {
 	return string(h[:9])
 }
 
+// Match returns true if the hash matches the given hash.
 func (h Hash) Match(s Hash) bool {
 	return h == s
 }
 
+// IsEmpty returns true if the release is empty.
 func (h Hash) IsEmpty() bool {
 	return h == ""
 }
