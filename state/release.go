@@ -1,6 +1,9 @@
 package state
 
 import (
+	"crypto/sha256"
+	"encoding/hex"
+	"encoding/json"
 	"fmt"
 	"time"
 
@@ -15,12 +18,40 @@ var (
 	ErrServiceMapInvalid   = eris.New("state: invalid service map. at least one active service is required to create a release")
 )
 
+// Hash is a custom type to store hash string.
+type Hash string
+
+// String returns the string representation of the hash.
+func (h Hash) String() string {
+	return string(h)
+}
+
+// Short hash version
+func (h Hash) Short() string {
+	if len(h) < 10 {
+		return ""
+	}
+	return string(h[:9])
+}
+
+// Match returns true if the hash matches the given hash.
+func (h Hash) Match(s Hash) bool {
+	return h == s
+}
+
+// IsEmpty returns true if the release is empty.
+func (h Hash) IsEmpty() bool {
+	return h == ""
+}
+
 // Release type hols release informtation.
 type Release struct {
-	Kind      ReleaseKind `json:"kind,omitempty"`
-	Tag       string      `json:"tag,omitempty"`
-	Versions  VersionMap  `json:"versions,omitempty"`
-	CreatedAt time.Time   `json:"created_at,omitempty"`
+	Kind              ReleaseKind `json:"kind,omitempty"`
+	Tag               string      `json:"tag,omitempty"`
+	Versions          VersionMap  `json:"versions,omitempty"`
+	CreatedAt         time.Time   `json:"created_at,omitempty"`
+	BlockHash         Hash        `json:"block_hash,omitempty"`
+	PreviousBlockHash Hash        `json:"previous_block_hash,omitempty"`
 }
 
 // NewRelease returns a new release from the given data.
@@ -102,4 +133,15 @@ func (r Release) Promote() (*Release, error) {
 	}
 	copied.Tag = fmt.Sprintf("v%s", version)
 	return copied, nil
+}
+
+func (r Release) Hash() (Hash, error) {
+	r.BlockHash = ""
+	b, err := json.Marshal(r)
+	if err != nil {
+		return "", err
+	}
+	h := sha256.New()
+	h.Write(b)
+	return Hash(hex.EncodeToString(h.Sum(nil))), nil
 }
