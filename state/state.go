@@ -8,6 +8,10 @@ import (
 	"github.com/rotisserie/eris"
 )
 
+var (
+	ErrNoRelease = eris.New("state: no releases")
+)
+
 // State holds all the release operations.
 type State struct {
 	Releases []*Release `json:"releases,omitempty"`
@@ -140,4 +144,24 @@ func (s *State) Validate() error {
 		}
 	}
 	return nil
+}
+
+// Rollback removes the latest release from the state.
+// It does not care about release kind.
+// It just pops the latest release from the state stack.
+func (s *State) Rollback() {
+	if len(s.Releases) == 0 {
+		return
+	}
+	s.Releases = s.Releases[1:]
+}
+
+// Head returns the latest release from the state stack.
+// It does not care about release kind.
+// It returns a shallow copy of the release.
+func (s *State) Head() (*Release, error) {
+	if len(s.Releases) == 0 {
+		return nil, ErrNoRelease
+	}
+	return s.Releases[0].Copy(), nil
 }

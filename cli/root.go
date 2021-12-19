@@ -28,6 +28,7 @@ func NewRootCmd() *cobra.Command {
 		},
 	}
 	init := NewInitCmd()
+	rollback := NewRollbackCmd()
 	status := NewStatusCmd()
 	dev := NewDevCmd()
 	alpha := NewAlphaCmd()
@@ -37,6 +38,6 @@ func NewRootCmd() *cobra.Command {
 	eol := NewEOLCmd()
 	unsupported := NewUnsupportedCmd()
 	publish.AddCommand(dev, alpha, beta, rc, ga, eol, unsupported)
-	cmd.AddCommand(init, status, publish)
+	cmd.AddCommand(init, status, publish, rollback)
 	return cmd
 }
