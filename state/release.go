@@ -92,7 +92,11 @@ func (r Release) Validate() error {
 
 // String returns the string representation of the release.
 func (r Release) String() string {
-	return fmt.Sprintf("%s@%s", r.Kind, r.Tag)
+	suffix := ""
+	if r.BlockHash.Short() != "" {
+		suffix = fmt.Sprintf("+%s", r.BlockHash.Short())
+	}
+	return fmt.Sprintf("%s@%s%s", r.Kind, r.Tag, suffix)
 }
 
 // Copy returns a copy of the release.

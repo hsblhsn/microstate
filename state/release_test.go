@@ -1,6 +1,7 @@
 package state_test
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/franela/goblin"
@@ -44,9 +45,11 @@ func TestRelease_Validate(t *testing.T) {
 func TestRelease_Upgrade(t *testing.T) {
 	g := goblin.Goblin(t)
 	r, err := state.NewRelease(state.ReleaseKindDev, "v1.0.0-dev.2+feature-a", state.VersionMap{})
-	g.Assert(err).IsNil()
-	g.Assert(r.String()).Equal("dev@v1.0.0-dev.2+feature-a")
 	g.Describe("Promote", func() {
+		g.It("NewRelease should a valid release", func() {
+			g.Assert(err).IsNil()
+			g.Assert(strings.HasPrefix(r.String(), "dev@v1.0.0-dev.2+feature-a")).IsTrue()
+		})
 		g.It("should get promoted to alpha", func() {
 			upgraded, err := r.Promote()
 			g.Assert(err).IsNil()

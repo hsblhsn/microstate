@@ -8,9 +8,9 @@
 				"product-service": "6a9b349",
 				"user-service": "3db20cf"
 			},
-			"created_at": "2021-12-19T05:38:46.193846+06:00",
-			"block_hash": "201cafec2ebfd787a90f16f9b202aaec1ea8468a623ca297ccc0627c70797ae8",
-			"previous_block_hash": "96eb2425e3a7585db36309518503939c8ab699c71cfccdb0e25f23d6944bcaa2"
+			"created_at": "2021-12-20T04:39:37.53669+06:00",
+			"block_hash": "36c6b27f0aa85aa5fd9ed5c1c913c7c2d39fda5f8427b421da9f0c18fea2c4ef",
+			"previous_block_hash": "b1933397b868acc300dc5ff994b138c3171d35775036a23243dc9f36af162e9a"
 		},
 		{
 			"kind": "ga",
@@ -20,9 +20,9 @@
 				"product-service": "6a9b349",
 				"user-service": "3db20cf"
 			},
-			"created_at": "2021-12-19T05:38:41.579552+06:00",
-			"block_hash": "96eb2425e3a7585db36309518503939c8ab699c71cfccdb0e25f23d6944bcaa2",
-			"previous_block_hash": "7ffc37a4e4faadaadb4a5cb82035623584382ab588f0b400eb75add01e8c5d11"
+			"created_at": "2021-12-20T04:39:34.346283+06:00",
+			"block_hash": "b1933397b868acc300dc5ff994b138c3171d35775036a23243dc9f36af162e9a",
+			"previous_block_hash": "2d883951189529dfdd7bd562b046beae3403b4ae1f5cc2bd309e8665046f9c31"
 		},
 		{
 			"kind": "rc",
@@ -32,9 +32,9 @@
 				"product-service": "6a9b349",
 				"user-service": "3db20cf"
 			},
-			"created_at": "2021-12-19T05:38:37.665988+06:00",
-			"block_hash": "7ffc37a4e4faadaadb4a5cb82035623584382ab588f0b400eb75add01e8c5d11",
-			"previous_block_hash": "1ab50df46687ae0b509ffeb92d32a1f06ae96736ecb73352a9942101a5e967f7"
+			"created_at": "2021-12-20T04:39:31.619831+06:00",
+			"block_hash": "2d883951189529dfdd7bd562b046beae3403b4ae1f5cc2bd309e8665046f9c31",
+			"previous_block_hash": "6f0bc91aadbc65fd3566381d129b44cfe9c5f58ca22b358c5d319bb4cd4bfea2"
 		},
 		{
 			"kind": "beta",
@@ -44,9 +44,9 @@
 				"product-service": "6a9b349",
 				"user-service": "3db20cf"
 			},
-			"created_at": "2021-12-19T05:38:13.655623+06:00",
-			"block_hash": "1ab50df46687ae0b509ffeb92d32a1f06ae96736ecb73352a9942101a5e967f7",
-			"previous_block_hash": "595c10526924ce5e0eae63f93250c69c391e14dc32a416deeebfa312f36a658d"
+			"created_at": "2021-12-20T04:39:23.574849+06:00",
+			"block_hash": "6f0bc91aadbc65fd3566381d129b44cfe9c5f58ca22b358c5d319bb4cd4bfea2",
+			"previous_block_hash": "8719c1e87b7ae24ea4f3f8742549f4008a3e1d2f39f894320c4af46bc6126448"
 		},
 		{
 			"kind": "alpha",
@@ -56,8 +56,8 @@
 				"product-service": "6a9b349",
 				"user-service": "3db20cf"
 			},
-			"created_at": "2021-12-19T05:38:01.381248+06:00",
-			"block_hash": "595c10526924ce5e0eae63f93250c69c391e14dc32a416deeebfa312f36a658d",
+			"created_at": "2021-12-20T04:39:18.274641+06:00",
+			"block_hash": "8719c1e87b7ae24ea4f3f8742549f4008a3e1d2f39f894320c4af46bc6126448",
 			"previous_block_hash": "09b35b441dc0b77e82b63dbaa0a7f47495940fbbf02c56714d1749bb1b7f278b"
 		},
 		{
