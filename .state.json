@@ -1,6 +1,66 @@
 {
 	"releases": [
 		{
+			"kind": "eol",
+			"tag": "v1.0.0-eol",
+			"versions": {
+				"gateway-service": "4ca603f",
+				"product-service": "6a9b349",
+				"user-service": "3db20cf"
+			},
+			"created_at": "2021-12-20T04:39:37.53669+06:00",
+			"block_hash": "36c6b27f0aa85aa5fd9ed5c1c913c7c2d39fda5f8427b421da9f0c18fea2c4ef",
+			"previous_block_hash": "b1933397b868acc300dc5ff994b138c3171d35775036a23243dc9f36af162e9a"
+		},
+		{
+			"kind": "ga",
+			"tag": "v1.0.0",
+			"versions": {
+				"gateway-service": "4ca603f",
+				"product-service": "6a9b349",
+				"user-service": "3db20cf"
+			},
+			"created_at": "2021-12-20T04:39:34.346283+06:00",
+			"block_hash": "b1933397b868acc300dc5ff994b138c3171d35775036a23243dc9f36af162e9a",
+			"previous_block_hash": "2d883951189529dfdd7bd562b046beae3403b4ae1f5cc2bd309e8665046f9c31"
+		},
+		{
+			"kind": "rc",
+			"tag": "v1.0.0-rc",
+			"versions": {
+				"gateway-service": "4ca603f",
+				"product-service": "6a9b349",
+				"user-service": "3db20cf"
+			},
+			"created_at": "2021-12-20T04:39:31.619831+06:00",
+			"block_hash": "2d883951189529dfdd7bd562b046beae3403b4ae1f5cc2bd309e8665046f9c31",
+			"previous_block_hash": "6f0bc91aadbc65fd3566381d129b44cfe9c5f58ca22b358c5d319bb4cd4bfea2"
+		},
+		{
+			"kind": "beta",
+			"tag": "v1.0.0-beta",
+			"versions": {
+				"gateway-service": "4ca603f",
+				"product-service": "6a9b349",
+				"user-service": "3db20cf"
+			},
+			"created_at": "2021-12-20T04:39:23.574849+06:00",
+			"block_hash": "6f0bc91aadbc65fd3566381d129b44cfe9c5f58ca22b358c5d319bb4cd4bfea2",
+			"previous_block_hash": "8719c1e87b7ae24ea4f3f8742549f4008a3e1d2f39f894320c4af46bc6126448"
+		},
+		{
+			"kind": "alpha",
+			"tag": "v1.0.0-alpha",
+			"versions": {
+				"gateway-service": "4ca603f",
+				"product-service": "6a9b349",
+				"user-service": "3db20cf"
+			},
+			"created_at": "2021-12-20T04:39:18.274641+06:00",
+			"block_hash": "8719c1e87b7ae24ea4f3f8742549f4008a3e1d2f39f894320c4af46bc6126448",
+			"previous_block_hash": "09b35b441dc0b77e82b63dbaa0a7f47495940fbbf02c56714d1749bb1b7f278b"
+		},
+		{
 			"kind": "dev",
 			"tag": "v1.0.0-dev",
 			"versions": {
