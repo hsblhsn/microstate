@@ -48,20 +48,6 @@ func (s *State) CreateRelease(r *Release) error {
 	return nil
 }
 
-// Latest returns the latest release of the given kind.
-func (s *State) Latest(kind ReleaseKind) *Release {
-	blank := &Release{
-		Kind: kind,
-		Tag:  "v0.0.0",
-	}
-	for _, v := range s.Releases {
-		if v.Kind.Is(kind) {
-			return v
-		}
-	}
-	return blank
-}
-
 // Clean removes all the releases of given kind from the state.
 func (s *State) Clean(kind ReleaseKind) {
 	for i, v := range s.Releases {
@@ -164,4 +150,28 @@ func (s *State) Head() (*Release, error) {
 		return nil, ErrNoRelease
 	}
 	return s.Releases[0].Copy(), nil
+}
+
+// Latest returns the latest release of the given kind.
+func (s *State) Latest(kind ReleaseKind) *Release {
+	blank := &Release{
+		Kind: kind,
+		Tag:  "v0.0.0",
+	}
+	for _, v := range s.Releases {
+		if v.Kind.Is(kind) {
+			return v.Copy()
+		}
+	}
+	return blank
+}
+
+// GetRelease returns a shallow copy of the release of the given hash.
+func (s *State) GetRelease(hash Hash) (*Release, error) {
+	for _, v := range s.Releases {
+		if v.BlockHash.String() == hash.String() || v.BlockHash.Short() == hash.Short() {
+			return v.Copy(), nil
+		}
+	}
+	return nil, eris.Errorf("state: release with hash %s not found", hash.String())
 }
