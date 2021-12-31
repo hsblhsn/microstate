@@ -160,7 +160,7 @@ func (s *State) Latest(kind ReleaseKind) *Release {
 	}
 	for _, v := range s.Releases {
 		if v.Kind.Is(kind) {
-			return v
+			return v.Copy()
 		}
 	}
 	return blank
