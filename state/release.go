@@ -21,6 +21,15 @@ var (
 // Hash is a custom type to store hash string.
 type Hash string
 
+// NewHash returns error if the given string length is less than 9 character.
+// TODO: add more validation.
+func NewHash(s string) (Hash, error) {
+	if len(s) < 9 {
+		return "", eris.Wrapf(ErrReleaseTagInvalid, "state: invalid hash length %d", len(s))
+	}
+	return Hash(s), nil
+}
+
 // String returns the string representation of the hash.
 func (h Hash) String() string {
 	return string(h)
